@@ -8,7 +8,7 @@ namespace WebAppIdentity
     {
         protected void Application_Start()
         {
-            //AreaRegistration.RegisterAllAreas();
+            AreaRegistration.RegisterAllAreas();
         }
     }
 }
