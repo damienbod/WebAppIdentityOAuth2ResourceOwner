@@ -11,6 +11,10 @@
 				templateUrl: 'details.html',
 				controller: 'DetailsController'
 			})
+            .when('/login', {
+                templateUrl: 'login.html',
+                controller: 'LoginController'
+            })
 			.otherwise({
 				redirectTo: '/home'
 			});
