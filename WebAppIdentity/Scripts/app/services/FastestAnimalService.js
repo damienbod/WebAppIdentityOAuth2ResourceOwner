@@ -1,13 +1,13 @@
 ﻿(function () {
 	'use strict';
 
-	function fastestAnimalService($http, $log, actualUser) {
+	function fastestAnimalService($http, $log, actualUserService) {
 
 		$log.info("fastestAnimalService called");
 
 		var getAnimals = function () {
 		    $log.info("fastestAnimalService:getAnimals called");
-		    $log.info("fastestAnimalService:getAnimals token: " + actualUser.profile.token);
+		    $log.info("fastestAnimalService:getAnimals token: " + actualUserService.profile.token);
 			return $http.get("/api/FastestAnimal")
 			.then(function (response) {
 				return response.data;
@@ -16,7 +16,7 @@
 
 		var getAnimal = function (id) {
 		    $log.info("fastestAnimalService:getAnimal called");
-		    $log.info("fastestAnimalService:getAnimal token: " + actualUser.profile.token);
+		    $log.info("fastestAnimalService:getAnimal token: " + actualUserService.profile.token);
 		    
 			return $http.get("/api/FastestAnimal/" + id)
 			.then(function (response) {
@@ -37,7 +37,7 @@
 		[
 			"$http",
 			"$log",
-            "actualUser",
+            "actualUserService",
             fastestAnimalService
 		]
 	);

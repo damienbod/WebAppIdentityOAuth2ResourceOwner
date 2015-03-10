@@ -1,10 +1,10 @@
 ﻿(function (module) {
-    var LoginController = function (oauth2ResourceOwnerFlowService, actualUser, loginRedirect) {
+    var LoginController = function (oauth2ResourceOwnerFlowService, actualUserService, loginRedirect) {
 
         var model = this;
         model.username = "";
         model.password = "";
-        model.user = actualUser.profile;
+        model.user = actualUserService.profile;
 
         model.login = function (form) {
             if (form.$valid) {

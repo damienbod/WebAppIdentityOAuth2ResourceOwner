@@ -213,7 +213,7 @@
     <Content Include="Scripts\app\services\addTokenToAllHttpRequestsWhenLoggedIn.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\app\services\actualUser.js">
+    <Content Include="Scripts\app\services\actualUserService.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Scripts\app\controllers\DetailsController.js">

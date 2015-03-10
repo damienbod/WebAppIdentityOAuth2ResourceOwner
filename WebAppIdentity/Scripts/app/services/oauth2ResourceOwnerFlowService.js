@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    function oauth2ResourceOwnerFlowService($http, $log, actualUser) {
+    function oauth2ResourceOwnerFlowService($http, $log, actualUserService) {
 
         var login = function(username, password) {
             var config = {
@@ -14,7 +14,7 @@
             var data = encodeQueryData(username, password);
             return $http.post("/oauth/token", data, config)
                 .then(function (response) {             
-                    actualUser.setProfile(username, response.data.access_token);
+                    actualUserService.setProfile(username, response.data.access_token);
                 });
         }
 
@@ -42,7 +42,7 @@
 		[
 			"$http",
 			"$log",
-            "actualUser",
+            "actualUserService",
             oauth2ResourceOwnerFlowService
 		]
 	);
