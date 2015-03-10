@@ -1,13 +1,21 @@
-﻿﻿<div ng-controller="LoginController as login">
-    <form ng-if="!nav.user.loggedIn" name="loginForm" ng-submit="login.login(loginForm)" novalidate>
-        <div class="form-group">
-            <label>Username</label>
-            <input name="username" type="text" placeholder="Username" class="form-control" ng-model="login.username" required />
+﻿<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{message}}</h3>
         </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input name="password" type="password" placeholder="Password" class="form-control" ng-model="login.password" required />
+        <div class="panel panel-body" ng-controller="LoginController as login">
+            <form ng-if="!nav.user.loggedIn" name="loginForm" ng-submit="login.login(loginForm)" novalidate>
+                <div class="form-group">
+                    <label>Username</label>
+                    <input name="username" type="text" placeholder="Username" class="form-control" ng-model="login.username" required />
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input name="password" type="password" placeholder="Password" class="form-control" ng-model="login.password" required />
+                </div>
+                <input class="btn btn-default" type="submit" value="Login" />
+            </form>
         </div>
-        <input class="btn btn-default" type="submit" value="Login" />
-    </form>
-</div>
+    </div>
+</div>﻿
+
