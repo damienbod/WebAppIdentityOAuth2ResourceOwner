@@ -1,12 +1,10 @@
 ﻿(function () {
     'use strict';
 
-    var addTokenToAllHttpRequestsWhenLoggedIn = function (actualUserService, $q, $log) {
-    	 
-        var request = function (config) {
-            $log.info("addTokenToAllHttpRequestWhenLoggedIn:request:adding token to request: " + actualUserService.profile.token);
-            $log.info(actualUserService.profile.loggedIn);
-            if (actualUserService.profile.loggedIn) {
+    var addTokenToAllHttpRequestsWhenLoggedIn = function (actualUserService, $q, $log) {   	 
+        var request = function (config) {    
+            if (actualUserService.profile.userHasLoggedInSuccessfully) {
+                $log.info("addTokenToAllHttpRequestsWhenLoggedIn:request:adding token to request: " + actualUserService.profile.token);
                 config.headers.Authorization = "Bearer " + actualUserService.profile.token;
             }
 

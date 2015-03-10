@@ -1,18 +1,6 @@
 ﻿(function () {
     'use strict';
 
-    var module = angular.module('mainApp');
-   
-	// this code can be used with uglify
-    module.controller('HomeController',
-		[
-			'$scope',
-			'$log',
-			"fastestAnimalService",
-			HomeController
-		]
-	);
-
     function HomeController($scope, $log, fastestAnimalService) {
     	$log.info("HomeController called");
     	$scope.message = "Home";
@@ -33,6 +21,16 @@
     	}
     }
 
- 
+    var module = angular.module('mainApp');
+
+    // this code can be used with uglify
+    module.controller('HomeController',
+		[
+			'$scope',
+			'$log',
+			"fastestAnimalService",
+			HomeController
+		]
+	);
 
 })();

@@ -1,19 +1,6 @@
 ﻿(function () {
     'use strict';
 
-    var module = angular.module('mainApp');
-   
-	// this code can be used with uglify
-    module.controller('DetailsController',
-		[
-			'$scope',
-			'$log',
-			"fastestAnimalService",
-			"$routeParams",
-			DetailsController
-		]
-	);
-
     function DetailsController($scope, $log, fastestAnimalService, $routeParams) {
     	$log.info("DetailsController called");
     	$scope.message = "Animal Details";
@@ -35,5 +22,18 @@
     		$scope.error = reason;
     	}
     }
+
+    var module = angular.module('mainApp');
+
+    // this code can be used with uglify
+    module.controller('DetailsController',
+		[
+			'$scope',
+			'$log',
+			"fastestAnimalService",
+			"$routeParams",
+			DetailsController
+		]
+	);
 
 })();

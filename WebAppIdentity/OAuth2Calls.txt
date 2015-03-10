@@ -4,7 +4,7 @@ Host: localhost:5768
 Content-Length: 59
 Content-Type: "x-www-form-urlencoded"
 
-username=SuperPowerUser&password=damien&grant_type=password
+username=damien&password=damien&grant_type=password
 
 ------------------------
 

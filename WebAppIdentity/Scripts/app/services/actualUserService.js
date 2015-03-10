@@ -7,13 +7,12 @@
             $log.info("actualUserService:setProfile, username:" + username + ",token:" + token);
             profile.username = username;
             profile.token = token;
-            profile.loggedIn = true;
+            profile.userHasLoggedInSuccessfully = true;
         }
 
         var profile = function () {
             username = "",
-            token = "",
-            loggedIn = false
+            token = ""
         }
 
         return {
