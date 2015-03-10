@@ -23,11 +23,11 @@ namespace WebAppIdentity.Migrations
 
 			var user = new ApplicationUser()
 			{
-				UserName = "SuperPowerUser",
-				Email = "damien.bowden@noser.com",
+				UserName = "damien",
+				Email = "damien_bod@hotmail.com",
 				EmailConfirmed = true,
-				FirstName = "Damien",
-				LastName = "Bowden",
+				FirstName = "damien",
+				LastName = "damien",
 				Level = 1,
 				JoinDate = DateTime.Now.AddYears(-3)
 			};

@@ -12,11 +12,18 @@
                 }
             }
 
-            var data = "username=SuperPowerUser&password=damien&grant_type=password"; //$.param({ username: "username" });
+            // username=damien&password=damien&grant_type=password         
+            var data = encodeQueryData(username, password);
             return $http.post("/oauth/token", data, config)
                 .then(function (response) {             
                     actualUser.setProfile(username, response.data.access_token);
                 });
+        }
+
+        function encodeQueryData(username, password) {
+            var data = "username=" + username + "&password=" + password + "&grant_type=password";
+            console.log(data);
+            return data;
         }
 
         return {

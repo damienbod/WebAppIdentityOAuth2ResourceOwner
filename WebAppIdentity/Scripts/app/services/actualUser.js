@@ -9,14 +9,13 @@
             console.log("actualUser:setProfile, username:" + username + ",token:" + token);
             profile.username = username;
             profile.token = token;
+            profile.loggedIn = true;
         }
 
         var profile = function () {
             username = "",
             token = "",
-            loggedIn = function() {
-                return this.token;
-            }
+            loggedIn = false
         }
 
         return {
