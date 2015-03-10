@@ -3,10 +3,10 @@
 
     var module = angular.module('mainApp');
    
-    var addToken = function(actualUser, $q) {
+    var addTokenToAllHttpRequestsWhenLoggedIn = function (actualUser, $q) {
     	 
         var request = function (config) {
-            console.log("addToken:request:adding token to request: " + actualUser.profile.token);
+            console.log("addTokenToAllHttpRequestWhenLoggedIn:request:adding token to request: " + actualUser.profile.token);
             console.log(actualUser.profile.loggedIn);
             if (actualUser.profile.loggedIn) {
                 config.headers.Authorization = "Bearer " + actualUser.profile.token;
@@ -20,10 +20,10 @@
         }
     }
  
-    module.factory('addToken', addToken);
+    module.factory('addTokenToAllHttpRequestsWhenLoggedIn', addTokenToAllHttpRequestsWhenLoggedIn);
 
     module.config(['$httpProvider', function ($httpProvider) {
-        $httpProvider.interceptors.push(addToken);
+        $httpProvider.interceptors.push(addTokenToAllHttpRequestsWhenLoggedIn);
     }]);
 
 

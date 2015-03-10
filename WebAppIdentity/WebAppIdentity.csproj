@@ -201,17 +201,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="login.html" />
-    <Content Include="nav.html" />
     <Content Include="Scripts\app\services\loginRedirect.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Scripts\app\controllers\LoginController.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\app\services\oauth2Password.js">
+    <Content Include="Scripts\app\services\oauth2ResourceOwnerFlowService.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\app\services\addToken.js">
+    <Content Include="Scripts\app\services\addTokenToAllHttpRequestsWhenLoggedIn.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Scripts\app\services\actualUser.js">
@@ -226,7 +225,7 @@
     <Content Include="Scripts\app\index.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\app\services\FastestAnimalService.js">
+    <Content Include="Scripts\app\services\fastestAnimalService.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="details.html">

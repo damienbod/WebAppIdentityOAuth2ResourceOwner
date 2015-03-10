@@ -1,9 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    var module = angular.module('mainApp');
-
-    function oauth2Password($http, actualUser) {
+    function oauth2ResourceOwnerFlowService($http, $log, actualUser) {
 
         var login = function(username, password) {
             var config = {
@@ -20,17 +18,33 @@
                 });
         }
 
+        var logout = function () {
+            // TODO
+            $log.info("oauth2ResourceOwnerFlowService:logout");
+        }
+
         function encodeQueryData(username, password) {
             var data = "username=" + username + "&password=" + password + "&grant_type=password";
-            console.log(data);
+            $log.info("oauth2ResourceOwnerFlowService:encodeQueryData " + data);
             return data;
         }
 
         return {
-            login: login
+            login: login,
+            logout: logout
         }
     }
 
-    module.factory('oauth2Password', oauth2Password);
+    var module = angular.module('mainApp');
+
+    // this code can be used with uglify
+    module.factory("oauth2ResourceOwnerFlowService",
+		[
+			"$http",
+			"$log",
+            "actualUser",
+            oauth2ResourceOwnerFlowService
+		]
+	);
 
 })();

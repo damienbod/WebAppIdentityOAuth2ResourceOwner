@@ -8,20 +8,20 @@
 		[
 			'$scope',
 			'$log',
-			"FastestAnimalService",
+			"fastestAnimalService",
 			"$routeParams",
 			DetailsController
 		]
 	);
 
-    function DetailsController($scope, $log, FastestAnimalService, $routeParams) {
+    function DetailsController($scope, $log, fastestAnimalService, $routeParams) {
     	$log.info("DetailsController called");
     	$scope.message = "Animal Details";
     	$scope.Id = $routeParams.Id;
     	$log.info("DetailsController called for: " + $scope.Id);
 
     	var getAnimals = function () {
-    		FastestAnimalService.getAnimal($scope.Id)
+    	    fastestAnimalService.getAnimal($scope.Id)
 			    .then(onSuccess, onError);
     	}
 

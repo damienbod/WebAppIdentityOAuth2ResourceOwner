@@ -4,7 +4,7 @@
             <h3 class="panel-title">{{message}}</h3>
         </div>
         <div class="panel panel-body" ng-controller="LoginController as login">
-            <form ng-if="!nav.user.loggedIn" name="loginForm" ng-submit="login.login(loginForm)" novalidate>
+            <form name="loginForm" ng-submit="login.login(loginForm)" novalidate>
                 <div class="form-group">
                     <label>Username</label>
                     <input name="username" type="text" placeholder="Username" class="form-control" ng-model="login.username" required />

@@ -1,5 +1,5 @@
 ﻿(function (module) {
-    var LoginController = function (oauth2Password, actualUser, loginRedirect) {
+    var LoginController = function (oauth2ResourceOwnerFlowService, actualUser, loginRedirect) {
 
         var model = this;
         model.username = "";
@@ -8,7 +8,7 @@
 
         model.login = function (form) {
             if (form.$valid) {
-                oauth2Password.login(model.username, model.password)
+                oauth2ResourceOwnerFlowService.login(model.username, model.password)
                 .then(loginRedirect.redirectPreLogin)
                 .catch(console.log("error damien"));
                 model.password = "";
@@ -16,7 +16,7 @@
         }
 
         model.signOut = function () {
-            oauth2Password.logout();
+            oauth2ResourceOwnerFlowService.logout();
         };
 
 

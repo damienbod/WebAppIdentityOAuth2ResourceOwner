@@ -8,17 +8,17 @@
 		[
 			'$scope',
 			'$log',
-			"FastestAnimalService",
+			"fastestAnimalService",
 			HomeController
 		]
 	);
 
-    function HomeController($scope, $log, FastestAnimalService) {
+    function HomeController($scope, $log, fastestAnimalService) {
     	$log.info("HomeController called");
     	$scope.message = "Home";
 
     	var getAnimals = function() {
-    		FastestAnimalService.getAnimals()
+    	    fastestAnimalService.getAnimals()
 			    .then(onSuccess, onError);
     	}
 
